@@ -17,7 +17,7 @@ namespace test_linq
             //{
             //    Console.WriteLine("unit=" + item + " ,");
             //}
-            #endregion 
+            #endregion
             #region SELECT is transformation opreation - refered excution
             //var result = ProductList.Select(p => p.ProductName);
             //result = from p in ProductList
@@ -49,13 +49,27 @@ namespace test_linq
 
             #endregion
             #region Element operators - Imidiate excution
-            var result = ProductList.FirstOrDefault();
-            result= ProductList.LastOrDefault(p => p.UnitsInStock==0);
-            result = ProductList.ElementAtOrDefault(500); //Eexception
-            Console.WriteLine(result?.ProductName??"NA");
+            //var result = ProductList.FirstOrDefault();
+            //result= ProductList.LastOrDefault(p => p.UnitsInStock==0);
+            //result = ProductList.ElementAtOrDefault(500); //Eexception
+            //Console.WriteLine(result?.ProductName??"NA");
 
             #endregion
+            #region Aggregate - Imidiate excution
+            //var result = ProductList.Count();
+            //result = ProductList.Count(p=>p.UnitsInStock == 0); 
+            //var result = ProductList.Max(p=>p.UnitPrice);
+            //Console.WriteLine(result);
+            //var result2 = (from p in ProductList
+            //              where p.UnitPrice == result
+            //              select new {p.ProductName,p.UnitPrice}).FirstOrDefault();
+            //Console.WriteLine(result2.ProductName+" "+result2.UnitPrice);
+            var avg = ProductList.Average(p=>p.UnitsInStock);
+            var sum = ProductList.Sum(p => p.UnitsInStock);
+            Console.WriteLine(avg);
+            Console.WriteLine(sum);
 
+            #endregion
         }
     }
 }
