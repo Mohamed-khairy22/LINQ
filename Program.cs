@@ -8,17 +8,17 @@ namespace test_linq
         static void Main(string[] args)
         {
             #region WHERE is filrerition
-            // var result = ProductList.Where(p => p.UnitsInStock == 0);
-            // result = from p in ProductList
-            //             where p.UnitsInStock == 0
-            //             select p;
-            //result = ProductList.Where((p,i)=> (p.UnitsInStock == 0) && (i<=5));
-            //foreach (var item in result)
-            //{
-            //    Console.WriteLine("unit=" + item + " ,");
-            //}
+            var result = ProductList.Where(p => p.UnitsInStock == 0);
+            result = from p in ProductList
+                     where p.UnitsInStock == 0
+                     select p;
+            result = ProductList.Where((p, i) => (p.UnitsInStock == 0) && (i <= 5));
+            foreach (var item in result)
+            {
+                Console.WriteLine("unit=" + item + " ,");
+            }
             #endregion
-            
+
         }
     }
 }
