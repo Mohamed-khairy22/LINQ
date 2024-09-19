@@ -71,9 +71,22 @@ namespace test_linq
             //Console.WriteLine(sum);
             #endregion
             #region Generators Operators
-            var result = Enumerable.Empty<Product>();
-            var result2 = Enumerable.Range(0, 50);
-            var result3 = Enumerable.Repeat(3,10);
+            //var result = Enumerable.Empty<Product>();
+            //var result2 = Enumerable.Range(0, 50);
+            //var result3 = Enumerable.Repeat(3,10);
+            #endregion
+            #region Set operators
+            var seq1 = Enumerable.Range(0, 100);
+            var seq2 = Enumerable.Range(50, 150);
+
+            var result = seq1.Union(seq2);
+            result = seq1.Concat(seq2);
+            result = result.Distinct();
+            result = seq1.Except(seq2);
+            result = seq1.Intersect(seq2);
+            foreach (var item in result)
+                Console.Write(item+" ");
+
             #endregion
         }
     }
