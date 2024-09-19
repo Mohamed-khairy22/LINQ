@@ -26,6 +26,11 @@ namespace test_linq
             //{
             //    Console.WriteLine(item);   
             //}
+            var result = ProductList.Select(p => new { Id = p.ProductID, p.ProductName });
+            foreach (var item in result)
+            {
+                Console.WriteLine(item);
+            }
 
             #endregion
 
