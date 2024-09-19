@@ -1,4 +1,5 @@
 ﻿//using System.Linq;
+using L2O___D09;
 using System.Xml;
 using static L2O___D09.ListGenerators;
 namespace test_linq
@@ -64,11 +65,15 @@ namespace test_linq
             //              where p.UnitPrice == result
             //              select new {p.ProductName,p.UnitPrice}).FirstOrDefault();
             //Console.WriteLine(result2.ProductName+" "+result2.UnitPrice);
-            var avg = ProductList.Average(p=>p.UnitsInStock);
-            var sum = ProductList.Sum(p => p.UnitsInStock);
-            Console.WriteLine(avg);
-            Console.WriteLine(sum);
-
+            //var avg = ProductList.Average(p=>p.UnitsInStock);
+            //var sum = ProductList.Sum(p => p.UnitsInStock);
+            //Console.WriteLine(avg);
+            //Console.WriteLine(sum);
+            #endregion
+            #region Generators Operators
+            var result = Enumerable.Empty<Product>();
+            var result2 = Enumerable.Range(0, 50);
+            var result3 = Enumerable.Repeat(3,10);
             #endregion
         }
     }
