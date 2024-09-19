@@ -7,7 +7,7 @@ namespace test_linq
     {
         static void Main(string[] args)
         {
-            #region WHERE is filrerition
+            #region WHERE is filrerition - refered excution
             //var result = ProductList.Where(p => p.UnitsInStock == 0);
             //result = from p in ProductList
             //         where p.UnitsInStock == 0
@@ -17,8 +17,8 @@ namespace test_linq
             //{
             //    Console.WriteLine("unit=" + item + " ,");
             //}
-            #endregion
-            #region SELECT is transformation opreation
+            #endregion 
+            #region SELECT is transformation opreation - refered excution
             //var result = ProductList.Select(p => p.ProductName);
             //result = from p in ProductList
             //         select p.ProductName;
@@ -33,19 +33,26 @@ namespace test_linq
             //}
 
             #endregion
-            #region Order elements
+            #region Order elements - refered excution
             //var result = ProductList.OrderBy(p => p.ProductName).Select(P=>new {P.ProductID,P.ProductName});
             //result = from p in ProductList
             //         orderby p.ProductName
             //         select new { p.ProductID, p.ProductName };
             //foreach (var item in result)
             //    Console.WriteLine(item);
-            var result2 = ProductList.OrderByDescending(p => p.ProductName).Select(P => new { P.ProductID, P.ProductName });
-            result2 = from p in ProductList
-                     orderby p.ProductName descending
-                     select new { p.ProductID, p.ProductName };
-            foreach (var item in result2)
-                Console.WriteLine(item);
+            //var result2 = ProductList.OrderByDescending(p => p.ProductName).Select(P => new { P.ProductID, P.ProductName });
+            //result2 = from p in ProductList
+            //         orderby p.ProductName descending
+            //         select new { p.ProductID, p.ProductName };
+            //foreach (var item in result2)
+            //    Console.WriteLine(item);
+
+            #endregion
+            #region Element operators - Imidiate excution
+            var result = ProductList.FirstOrDefault();
+            result= ProductList.LastOrDefault(p => p.UnitsInStock==0);
+            result = ProductList.ElementAtOrDefault(500); //Eexception
+            Console.WriteLine(result?.ProductName??"NA");
 
             #endregion
 
