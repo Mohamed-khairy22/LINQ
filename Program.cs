@@ -8,15 +8,25 @@ namespace test_linq
         static void Main(string[] args)
         {
             #region WHERE is filrerition
-            var result = ProductList.Where(p => p.UnitsInStock == 0);
+            //var result = ProductList.Where(p => p.UnitsInStock == 0);
+            //result = from p in ProductList
+            //         where p.UnitsInStock == 0
+            //         select p;
+            //result = ProductList.Where((p, i) => (p.UnitsInStock == 0) && (i <= 5));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine("unit=" + item + " ,");
+            //}
+            #endregion
+            #region SELECT is transformation opreation
+            var result = ProductList.Select(p => p.ProductName);
             result = from p in ProductList
-                     where p.UnitsInStock == 0
-                     select p;
-            result = ProductList.Where((p, i) => (p.UnitsInStock == 0) && (i <= 5));
+                     select p.ProductName;
             foreach (var item in result)
             {
-                Console.WriteLine("unit=" + item + " ,");
+                Console.WriteLine(item);   
             }
+
             #endregion
 
         }
