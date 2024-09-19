@@ -19,13 +19,13 @@ namespace test_linq
             //}
             #endregion
             #region SELECT is transformation opreation
-            var result = ProductList.Select(p => p.ProductName);
-            result = from p in ProductList
-                     select p.ProductName;
-            foreach (var item in result)
-            {
-                Console.WriteLine(item);   
-            }
+            //var result = ProductList.Select(p => p.ProductName);
+            //result = from p in ProductList
+            //         select p.ProductName;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);   
+            //}
 
             #endregion
 
