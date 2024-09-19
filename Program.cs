@@ -26,11 +26,26 @@ namespace test_linq
             //{
             //    Console.WriteLine(item);   
             //}
-            var result = ProductList.Select(p => new { Id = p.ProductID, p.ProductName });
-            foreach (var item in result)
-            {
+            //var result = ProductList.Select(p => new { Id = p.ProductID, p.ProductName });
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            #endregion
+            #region Order elements
+            //var result = ProductList.OrderBy(p => p.ProductName).Select(P=>new {P.ProductID,P.ProductName});
+            //result = from p in ProductList
+            //         orderby p.ProductName
+            //         select new { p.ProductID, p.ProductName };
+            //foreach (var item in result)
+            //    Console.WriteLine(item);
+            var result2 = ProductList.OrderByDescending(p => p.ProductName).Select(P => new { P.ProductID, P.ProductName });
+            result2 = from p in ProductList
+                     orderby p.ProductName descending
+                     select new { p.ProductID, p.ProductName };
+            foreach (var item in result2)
                 Console.WriteLine(item);
-            }
 
             #endregion
 
